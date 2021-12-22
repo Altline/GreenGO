@@ -6,7 +6,9 @@ using System.Text;
 
 public class HelpdeskService {
 
-	public HelpdeskService() {
+	public static readonly HelpdeskService Instance = new HelpdeskService();
+
+	private HelpdeskService() {
 	}
 
 	private Database database {

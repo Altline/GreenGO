@@ -6,7 +6,9 @@ using System.Text;
 
 public class AccountService {
 
-	public AccountService() {
+	public static readonly AccountService Instance = new AccountService();
+
+	private AccountService() {
 	}
 
 	private Database database {

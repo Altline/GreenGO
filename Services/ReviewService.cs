@@ -6,7 +6,9 @@ using System.Text;
 
 public class ReviewService {
 
-	public ReviewService() {
+	public static readonly ReviewService Instance = new ReviewService();
+
+	private ReviewService() {
 	}
 
 	private Database database {

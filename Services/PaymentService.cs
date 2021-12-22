@@ -6,7 +6,9 @@ using System.Text;
 
 public class PaymentService {
 
-	public PaymentService() {
+	public static readonly PaymentService Instance = new PaymentService();
+
+	private PaymentService() {
 	}
 
 	private Database database {
