@@ -13,7 +13,7 @@ public class TravelOptions {
 		get; set;
 	}
 
-	public bool lowEmissionAccomodation {
+	public bool lowEmissionAccommodation {
 		get; set;
 	}
 
