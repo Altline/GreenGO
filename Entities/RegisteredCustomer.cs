@@ -45,7 +45,8 @@ public class RegisteredCustomer {
 	/// @param itinerary
 	/// </summary>
 	public void generateItinerary(Itinerary itinerary) {
-		// TODO implement here
+		// 'itinerary' is the user's input
+		ItineraryService.Instance.saveItinerary(itinerary);
 	}
 
 	/// <summary>

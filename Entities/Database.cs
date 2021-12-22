@@ -12,14 +12,25 @@ public class Database {
 
 
 
+	public List<AccommodationServiceProvider> FetchAccommodationProviders()
+	{
+		// logic to return all accommodation service providers from the database
+		throw new NotImplementedException();
+	}
 
+	public List<TransportServiceProvider> FetchTransportProviders()
+	{
+		// logic to return all transport service providers from the database
+		throw new NotImplementedException();
+	}
 
 
 	/// <summary>
 	/// @param itinerary
 	/// </summary>
 	public void storeItinerary(Itinerary itinerary) {
-		// TODO implement here
+
+		// logic to store itinerary to the database
 	}
 
 	/// <summary>

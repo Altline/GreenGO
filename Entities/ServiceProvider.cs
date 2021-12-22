@@ -41,7 +41,8 @@ public class ServiceProvider {
 	/// @param itinerary
 	/// </summary>
 	public void notifyItineraryChange(Itinerary itinerary) {
-		// TODO implement here
+
+		// logic to show a notification about the itinerary change to the service provider
 	}
 
 }

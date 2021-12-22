@@ -53,7 +53,16 @@ public class ItineraryService
 	/// </summary>
 	public void saveItinerary(Itinerary itinerary)
 	{
-		// TODO implement here
+		if (itinerary.isReservationAvailable())
+		{
+			itinerary.reserve();
+			database.storeItinerary(itinerary);
+			notifyServiceProviders(itinerary);
+		}
+		else
+		{
+			// alert user
+		}
 	}
 
 	/// <summary>
@@ -89,11 +98,36 @@ public class ItineraryService
 	}
 
 	/// <summary>
+	/// Finds and notifies all service providers that are connected with the specified itinerary.
 	/// @param itinerary
 	/// </summary>
 	private void notifyServiceProviders(Itinerary itinerary)
 	{
-		// TODO implement here
+		var accommodationProviders = database.FetchAccommodationProviders();
+		foreach (var provider in accommodationProviders)
+		{
+			foreach (var accommodation in provider.accommodations)
+			{
+				if (itinerary.accommodation.Equals(accommodation))
+				{
+					provider.notifyItineraryChange(itinerary);
+					break;
+				}
+			}
+		}
+
+		var transportProviders = database.FetchTransportProviders();
+		foreach (var provider in transportProviders)
+		{
+			foreach (var vehicle in provider.vehicles)
+			{
+				if (itinerary.transport.Equals(vehicle))
+				{
+					provider.notifyItineraryChange(itinerary);
+					break;
+				}
+			}
+		}
 	}
 
 }

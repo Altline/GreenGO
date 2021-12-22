@@ -21,4 +21,8 @@ public class Vehicle {
 		get; set;
 	}
 
+	internal void reserve(TimePeriod timePeriod)
+	{
+		reservations.Add(timePeriod);
+	}
 }

@@ -21,4 +21,9 @@ public class Accommodation {
 		get; set;
 	}
 
+	internal void reserve(TimePeriod timePeriod)
+	{
+		reservations.Add(timePeriod);
+	}
+
 }

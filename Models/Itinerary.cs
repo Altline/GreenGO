@@ -41,4 +41,17 @@ public class Itinerary {
 		// TODO implement here
 	}
 
+	internal bool isReservationAvailable()
+	{
+		bool accommodationTaken = reservationPeriod.overlapsAny(accommodation.reservations);
+		bool transportTaken = reservationPeriod.overlapsAny(transport.reservations);
+		return !accommodationTaken && !transportTaken;
+	}
+
+	internal void reserve()
+	{
+		accommodation.reserve(reservationPeriod);
+		transport.reserve(reservationPeriod);
+	}
+
 }
