@@ -13,6 +13,14 @@ public class Itinerary {
 		get; set;
 	}
 
+	public Accommodation accommodation {
+		get; set;
+	}
+
+	public Vehicle transport {
+		get; set;
+	}
+
 	public TimePeriod reservationPeriod {
 		get; set;
 	}
