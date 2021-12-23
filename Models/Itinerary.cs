@@ -6,7 +6,14 @@ using System.Text;
 
 public class Itinerary {
 
-	public Itinerary() {
+	public Itinerary(List<POI> destinations, Accommodation accommodation, Vehicle transport, TimePeriod reservationPeriod, TravelOptions travelOptions)
+	{
+		this.destinations = destinations;
+		this.accommodation = accommodation;
+		this.transport = transport;
+		this.reservationPeriod = reservationPeriod;
+		this.travelOptions = travelOptions;
+		// this.price = calculate price based on other attributes
 	}
 
 	public List<POI> destinations {

@@ -41,11 +41,28 @@ public class RegisteredCustomer {
 		return null;
 	}
 
+	public Itinerary inputItinerary()
+	{
+		List<POI> destinations = null;
+		Accommodation accommodation = null;
+		Vehicle transport = null;
+		TimePeriod reservationPeriod = null;
+		TravelOptions travelOptions = null;
+
+		// ask user to input destinations
+		// ask user to input accommodation
+		// ask user to input transport
+		// ask user to input reservatinPeriod
+		// ask user to input travelOptions
+
+		return new Itinerary(destinations, accommodation, transport, reservationPeriod, travelOptions);
+	}
+
 	/// <summary>
 	/// @param itinerary
 	/// </summary>
-	public void generateItinerary(Itinerary itinerary) {
-		// 'itinerary' is the user's input
+	public void generateItinerary() {
+		var itinerary = inputItinerary();
 		ItineraryService.Instance.saveItinerary(itinerary);
 	}
 
